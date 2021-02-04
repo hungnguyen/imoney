@@ -17,7 +17,7 @@ import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   getAllExpense,
-  getSingleMonth,
+  selectMonth,
   deleteExpense,
   selectExpense,
 } from "../actions";
@@ -53,7 +53,7 @@ function Month({
   expense,
   month,
   getAllExpense,
-  getSingleMonth,
+  selectMonth,
   deleteExpense,
   selectExpense,
   edit,
@@ -78,8 +78,8 @@ function Month({
   }, [expense.list, params.monthId]);
 
   React.useEffect(() => {
-    getSingleMonth(params.monthId);
-  }, [params.monthId, getSingleMonth]);
+    selectMonth(params.monthId);
+  }, [params.monthId, selectMonth]);
 
   function handleOpen() {
     setOpen(true);
@@ -236,7 +236,7 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
   getAllExpense,
-  getSingleMonth,
+  selectMonth,
   deleteExpense,
   selectExpense,
 })(Month);

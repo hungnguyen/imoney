@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     color: "inherit",
+    lineHeight: "1px",
   },
 }));
 

@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   snackbar: {
-    left: "30%",
-    right: "30%",
+    width: "40%",
+    margin: "0 auto",
   },
 }));
 

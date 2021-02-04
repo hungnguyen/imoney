@@ -211,7 +211,11 @@ function Month({
           </TableBody>
         </Table>
       </TableContainer>
-      <ExpenseModal open={open} onClose={handleClose} />
+      <ExpenseModal
+        open={open}
+        onClose={handleClose}
+        monthId={params.monthId}
+      />
       <Loading open={expense.loading || month.loading} />
       <Fab
         aria-label="Add"

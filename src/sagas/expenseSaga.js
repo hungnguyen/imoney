@@ -42,7 +42,7 @@ function* update(action) {
 function* remove(action) {
   try {
     yield call(expenseApi.remove, action.data);
-    yield put(actions.deleteExpenseSuccess);
+    yield put(actions.deleteExpenseSuccess(action.data));
   } catch (e) {
     yield put(actions.addLog(e));
   }

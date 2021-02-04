@@ -78,6 +78,7 @@ function Month({
   }, [expense.list, params.monthId]);
 
   React.useEffect(() => {
+    console.log(params.monthId);
     selectMonth(params.monthId);
   }, [params.monthId, selectMonth]);
 
@@ -109,7 +110,7 @@ function Month({
   }, [expenseByMonth]);
 
   React.useEffect(() => {
-    setTotalRemain(month.item.income?.$numberDecimal - totalAmount);
+    setTotalRemain(month.item?.income?.$numberDecimal - totalAmount);
   }, [totalAmount, month.item]);
 
   return (
@@ -128,7 +129,7 @@ function Month({
                 <Typography style={{ color: "green" }}>
                   <NumberFormat
                     displayType="text"
-                    value={month.item.income?.$numberDecimal}
+                    value={month.item?.income?.$numberDecimal}
                     thousandSeparator
                   />
                 </Typography>
@@ -210,11 +211,7 @@ function Month({
           </TableBody>
         </Table>
       </TableContainer>
-      <ExpenseModal
-        open={open}
-        onClose={handleClose}
-        monthId={month.item?._id}
-      />
+      <ExpenseModal open={open} onClose={handleClose} />
       <Loading open={expense.loading || month.loading} />
       <Fab
         aria-label="Add"

@@ -26,13 +26,13 @@ function ExpenseModal({
   expense,
   updateExpense,
   createExpense,
-  monthId,
+  month,
 }) {
   const classes = useStyles();
   const init = {
     name: "",
     amount: 0,
-    monthId,
+    monthId: month.item._id,
   };
   const [updateObj, setUpdateObj] = React.useState(init);
 
@@ -117,6 +117,7 @@ function ExpenseModal({
 
 const mapStateToProps = (state) => ({
   expense: state.expense,
+  month: state.month,
 });
 
 export default connect(mapStateToProps, {

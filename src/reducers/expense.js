@@ -31,7 +31,10 @@ export default function expense(state = initState, action) {
             ? {
                 ...item,
                 name: action.data.name,
-                amount: { $numberDecimal: action.data.amount },
+                amount: {
+                  $numberDecimal:
+                    action.data.amount.$numberDecimal || action.data.amount,
+                },
               }
             : item
         ),

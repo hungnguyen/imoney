@@ -49,6 +49,11 @@ export default function month(state = initState, action) {
         ...state,
         item: state.list.find((item) => item._id === action.data),
       };
+    case actionTypes.UNSELECT_MONTH:
+      return {
+        ...state,
+        item: {},
+      };
     default:
       return state;
   }

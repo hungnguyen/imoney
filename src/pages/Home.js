@@ -18,7 +18,12 @@ import { Close, Edit } from "@material-ui/icons";
 import NavigateNext from "@material-ui/icons/NavigateNext";
 
 import { connect } from "react-redux";
-import { getAllMonth, deleteMonth, selectMonth } from "../actions";
+import {
+  getAllMonth,
+  deleteMonth,
+  selectMonth,
+  unSelectMonth,
+} from "../actions";
 import MonthModal from "../components/MonthModal";
 import Loading from "../components/Loading";
 
@@ -40,7 +45,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Home({ month, getAllMonth, deleteMonth, selectMonth, edit }) {
+function Home({
+  month,
+  getAllMonth,
+  deleteMonth,
+  selectMonth,
+  edit,
+  unSelectMonth,
+}) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -56,6 +68,7 @@ function Home({ month, getAllMonth, deleteMonth, selectMonth, edit }) {
 
   const handleClose = () => {
     setOpen(false);
+    unSelectMonth();
   };
   const handleOpen = () => {
     setOpen(true);
@@ -124,4 +137,5 @@ export default connect(mapStateToProps, {
   getAllMonth,
   deleteMonth,
   selectMonth,
+  unSelectMonth,
 })(Home);

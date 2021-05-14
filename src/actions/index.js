@@ -49,6 +49,10 @@ export const selectMonth = (data) => ({
   data,
 });
 
+export const unSelectMonth = () => ({
+  type: actionTypes.UNSELECT_MONTH,
+});
+
 //expense actions
 export const getAllExpense = () => ({
   type: actionTypes.GET_ALL_EXPENSE,
@@ -99,7 +103,7 @@ export const selectExpense = (data) => ({
   data,
 });
 
-export const unSelectExpense = (data) => ({
+export const unSelectExpense = () => ({
   type: actionTypes.UNSELECT_EXPENSE,
 });
 

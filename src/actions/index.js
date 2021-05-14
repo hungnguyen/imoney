@@ -99,6 +99,10 @@ export const selectExpense = (data) => ({
   data,
 });
 
+export const unSelectExpense = (data) => ({
+  type: actionTypes.UNSELECT_EXPENSE,
+});
+
 //log actions
 export const addLog = (data) => ({
   type: actionTypes.ADD_LOG,

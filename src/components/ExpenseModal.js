@@ -37,7 +37,10 @@ function ExpenseModal({
   const [updateObj, setUpdateObj] = React.useState(init);
 
   React.useEffect(() => {
-    if (expense.item._id || (expense.item._id && updateObj._id === undefined)) {
+    if (
+      expense.item?._id ||
+      (expense.item?._id && updateObj._id === undefined)
+    ) {
       setUpdateObj(expense.item);
     }
   }, [expense.item, setUpdateObj, updateObj._id]);

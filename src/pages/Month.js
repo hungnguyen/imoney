@@ -20,6 +20,7 @@ import {
   selectMonth,
   deleteExpense,
   selectExpense,
+  unSelectExpense,
 } from "../actions";
 
 import ExpenseModal from "../components/ExpenseModal";
@@ -56,6 +57,7 @@ function Month({
   selectMonth,
   deleteExpense,
   selectExpense,
+  unSelectExpense,
   edit,
 }) {
   const classes = useStyles();
@@ -87,6 +89,7 @@ function Month({
   }
   function handleClose() {
     setOpen(false);
+    unSelectExpense();
   }
   function handleDelete(e, item) {
     if (window.confirm(`Bạn có muốn xóa ${item.name}?`)) {
@@ -240,4 +243,5 @@ export default connect(mapStateToProps, {
   selectMonth,
   deleteExpense,
   selectExpense,
+  unSelectExpense,
 })(Month);

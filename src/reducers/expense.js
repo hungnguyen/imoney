@@ -52,6 +52,11 @@ export default function expense(state = initState, action) {
         ...state,
         item: state.list.find((item) => item._id === action.data),
       };
+    case actionTypes.UNSELECT_EXPENSE:
+      return {
+        ...state,
+        item: {},
+      };
     default:
       return state;
   }

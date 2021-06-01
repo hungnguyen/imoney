@@ -121,6 +121,9 @@ function Month({
       <Typography variant="h5" gutterBottom align="center">
         Tổng kết
       </Typography>
+      <Typography variant="subtitle1" gutterBottom align="center">
+        {month.item?.name}
+      </Typography>
       <Paper className={classes.total}>
         <Table className={classes.table} aria-label="simple table">
           <TableBody>
